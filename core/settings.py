@@ -129,3 +129,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CELERY_BROKER_URL = 'redis://localhost:6379'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
+
+CELERY_BEAT_SCHEDULE = {
+    "fist_task":{
+        "task":"weather.tasks.first_task",
+        "schedule":1
+    },
+    "second_task":{
+        "task":"weather.tasks.second_task",
+        "schedule":2
+    }
+}
