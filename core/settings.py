@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     
     'weather',
+    'apikey',
 ]
 
 MIDDLEWARE = [
@@ -136,10 +137,10 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_BEAT_SCHEDULE = {
     "fist_task":{
         "task":"weather.tasks.first_task",
-        "schedule":1
+        "schedule":20
     },
-    "second_task":{
-        "task":"weather.tasks.second_task",
-        "schedule":2
-    }
+    # "second_task":{
+    #     "task":"weather.tasks.second_task",
+    #     "schedule":2
+    # }
 }
